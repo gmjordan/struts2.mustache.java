@@ -41,10 +41,13 @@ If your mustache templates are on the root path of the context, then do:
 </package>
 ```
 
-- Start using the mustache code in your templates!
-```html
+- Start using the mustache code in your templates
+
 {{< /html/mustache/global/base-private.html}}
+
 {{somecontent}}
 {{/somecontent}}
+
 {{/ /html/mustache/global/base-private.html}}
-```
+
+
