@@ -3,7 +3,7 @@ struts2.mustache.java
 
 Steps to include:
 
-1. Include the [mustache.java](https://github.com/spullara/mustache.java) project in your app
+- include the [mustache.java](https://github.com/spullara/mustache.java) project in your app
 
 Maven dependency information (ie. for most common cases you will just need the `compiler` module):
 
@@ -14,11 +14,9 @@ Maven dependency information (ie. for most common cases you will just need the `
   <version>0.8.12</version>
 </dependency>
 ``` 
+- Download the [mustache-java-struts2-1.0.0.jar](https://github.com/gmjordan/struts2.mustache.java/raw/master/target/mustache-java-struts2-1.0.0.jar) and add to your project.
 
-
-2. Download the [mustache-java-struts2-1.0.0.jar](https://github.com/gmjordan/struts2.mustache.java/raw/master/target/mustache-java-struts2-1.0.0.jar) and add to your project.
-
-3. Add the result type to your root package in the struts.xml file.
+- Add the result type to your root package in the struts.xml file.
 
 If you want to use a Context path other than the root context path, then update the rootMustachePath. If you do decide to 
 use a custom path, then the content must have access to the path, i.e. through a Context alias
@@ -41,4 +39,12 @@ If your mustache templates are on the root path of the context, then do:
 		<result-type name="mustache" class="com.github.gmjordan.mustache.java.struts.MustacheResult" />
 	</result-types>
 </package>
+```
+
+- Start using the mustache code in your templates!
+```html
+{{< /html/mustache/global/base-private.html}}
+{{somecontent}}
+{{/somecontent}}
+{{/ /html/mustache/global/base-private.html}}
 ```
