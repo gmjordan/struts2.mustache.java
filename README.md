@@ -1,6 +1,5 @@
 struts2.mustache.java
 =====================
 
-this a test edit.
 
-[I'm a relative reference to a repository file](/raw/master/target/mustache-java-options-1.0.0.jar)
+Download [mustache-java-struts2-1.0.0.jar](https://github.com/gmjordan/struts2.mustache.java/raw/master/target/mustache-java-struts2-1.0.0.jar and add to your project.
