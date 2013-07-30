@@ -17,7 +17,7 @@ Maven dependency information (ie. for most common cases you will just need the `
   <version>0.8.12</version>
 </dependency>
 ``` 
-- Download the [mustache-java-struts2-1.0.0.jar](https://github.com/gmjordan/struts2.mustache.java/raw/master/target/mustache-java-struts2.jar) and add to your project.
+- Download the [mustache-java-struts2.jar](https://github.com/gmjordan/struts2.mustache.java/raw/master/target/mustache-java-struts2.jar) and add to your project.
 
 - Add the result type to your root package in the struts.xml file.
 
