@@ -18,20 +18,7 @@ Maven dependency information (ie. for most common cases you will just need the `
 
 - Add the result type to your root package in the struts.xml file.
 
-If you want to use a Context path other than the root context path, then update the rootMustachePath. If you do decide to 
-use a custom path, then the content must have access to the path, i.e. through a Context alias
-
-```xml
-<package name="my-root-default" extends="struts-default">
-	<result-types>
-  		<result-type name="mustache" class="com.github.gmjordan.mustache.java.struts.MustacheResult">
-  			<param name="rootMustachePath">/some/static/path/to/mark/up/</param>
-		</result-type>
-	</result-types>
-</package>
-```
-
-If your mustache templates are on the root path of the context, then do:
+When your mustache templates are within the default path of the context (e.g. /WEB-INF/mustache/home/index.html), then do:
 
 ```xml
 <package name="my-root-default" extends="struts-default">
@@ -40,6 +27,61 @@ If your mustache templates are on the root path of the context, then do:
 	</result-types>
 </package>
 ```
+
+your actions would look like
+
+```xml
+<action name="home" class="com.package.action.MyHome" method="showAppHomeContent" >
+	<result name="success" type="mustache">/WEB-INF/mustache/home/index.html</result>
+</action>
+```
+
+or with annotations
+
+```java
+
+@Actions({
+	@Action(value = "", results = { @Result(name = "success", type = "mustache", location = "/WEB-INF/mustache/home/index.html") }),
+	@Action(value = "home", results = { @Result(name = "success", type = "mustache", location = "/WEB-INF/mustache/home/index.html") })
+})
+```
+
+If you want to use a path other than the default path, then provide a param called rootMustachePath in the result type configuration.
+
+This approach is useful if you've got html/css coders who don't have access or don't want access to update the web app.
+
+To be sure, the context must have access to the path, i.e. through a context alias
+
+```xml
+<package name="my-root-default" extends="struts-default">
+	<result-types>
+  		<result-type name="mustache" class="com.github.gmjordan.mustache.java.struts.MustacheResult">
+  			<param name="rootMustachePath">/Users/myname/www/path/to/mydotcom/webassets/</param>
+		</result-type>
+	</result-types>
+</package>
+```
+
+the alias could be /html=/Users/myname/www/path/to/mydotcom/webassets/html
+
+your mustache code would go under /Users/myname/www/path/to/mydotcom/webassets/html/mustache and your actions would look like:
+
+```xml
+<action name="home" class="com.package.action.MyHome" method="showAppHomeContent" >
+	<result name="success" type="mustache">/html/mustache/home/index.html</result>
+</action>
+```
+
+or with annotations
+
+```java
+
+@Actions({
+	@Action(value = "", results = { @Result(name = "success", type = "mustache", location = "/html/mustache/home/index.html") }),
+	@Action(value = "home", results = { @Result(name = "success", type = "mustache", location = "/html/mustache/home/index.html") })
+})
+```
+
 
 - Start using the mustache code in your templates
 
