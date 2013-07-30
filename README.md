@@ -86,7 +86,7 @@ or with annotations
 ```
 
 
-- Start using the mustache code in your templates
+- Start using [the mustache code](http://mustache.github.com/mustache.5.html) in your templates
 
 {{< /html/mustache/global/base-private.html}}
 
