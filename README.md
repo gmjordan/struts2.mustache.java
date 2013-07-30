@@ -1,6 +1,9 @@
 struts2.mustache.java
 =====================
 
+big thanks to [Ricardo Zuasti](http://ricardozuasti.com/2012/using-mustache-java-templates-with-struts-2/) for providing the core code.
+
+
 Steps to include:
 
 - include the [mustache.java](https://github.com/spullara/mustache.java) project in your app
