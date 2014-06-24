@@ -14,7 +14,7 @@ Maven dependency information (ie. for most common cases you will just need the `
 <dependency>
   <groupId>com.github.spullara.mustache.java</groupId>
   <artifactId>compiler</artifactId>
-  <version>0.8.12</version>
+  <version>0.8.15</version>
 </dependency>
 ``` 
 - Download the [mustache-java-struts2.jar](https://github.com/gmjordan/struts2.mustache.java/raw/master/target/mustache-java-struts2-1.0.0.jar) and add to your project.
